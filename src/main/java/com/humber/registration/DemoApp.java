@@ -3,36 +3,27 @@ package com.humber.registration;
 import java.util.*;
 
 /**
- * Humber Registration System - Java Collections Framework Demo
- * Shows basic Collections usage: Lists, Sets, Maps, Queues
+ * Demo version with sample data for README documentation
+ * Shows Collections Framework demos without requiring user input
  */
-public class App {
+public class DemoApp {
     public static void main(String[] args) {
         System.out.println("=== Humber Registration System - Collections Demo ===\n");
         
-        // Run all four parts of the Collections demo
-        runPartA();  // Student ID handling with wrapper classes
-        runPartB();  // Duplicate registration with Sets
-        runPartC();  // Course enrollment with Maps
-        runPartD();  // Waitlist processing with Queues
+        runPartADemo();  // Student ID handling with sample data
+        runPartBDemo();  // Duplicate registration with Sets
+        runPartCDemo();  // Course enrollment with Maps
+        runPartDDemo();  // Waitlist processing with Queues
         
         System.out.println("\n=== Demo Complete ===");
     }
     
-    // Part A: Student ID Handling (Wrapper Classes & Autoboxing)
-    private static void runPartA() {
+    // Part A: Student ID Handling (Wrapper Classes & Autoboxing) - with sample data
+    private static void runPartADemo() {
         System.out.println("--- Part A: Student ID Handling (Wrapper Classes) ---");
         
-        List<Integer> studentIds = new ArrayList<>();
-        
-        try (Scanner scanner = new Scanner(System.in)) {
-            // Prompt for 10 student IDs
-            System.out.println("Enter 10 student IDs:");
-            for (int i = 0; i < 10; i++) {
-                System.out.print("ID " + (i + 1) + ": ");
-                studentIds.add(scanner.nextInt()); // autoboxing: int -> Integer
-            }
-        }
+        List<Integer> studentIds = Arrays.asList(1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010);
+        System.out.println("Sample student IDs: " + studentIds);
         
         // compute sum (unboxing: Integer -> int)
         int sum = 0;
@@ -54,7 +45,7 @@ public class App {
     }
     
     // Part B: Avoiding Duplicate Registration (Sets)
-    private static void runPartB() {
+    private static void runPartBDemo() {
         System.out.println("--- Part B: Avoiding Duplicate Registration (Sets) ---");
         
         // list with duplicates
@@ -76,7 +67,7 @@ public class App {
     }
     
     // Part C: Course Enrollment Records (Map)
-    private static void runPartC() {
+    private static void runPartCDemo() {
         System.out.println("--- Part C: Course Enrollment Records (Map) ---");
         
         // sample course enrollments
@@ -107,7 +98,7 @@ public class App {
     }
     
     // Part D: Waitlist Queue Processing
-    private static void runPartD() {
+    private static void runPartDDemo() {
         System.out.println("--- Part D: Waitlist Queue Processing ---");
         
         // Priority queue for urgent requests
