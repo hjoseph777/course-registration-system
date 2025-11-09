@@ -1,13 +1,20 @@
 # Course Registration System
 
 ## Project Information
-- Author: Harry Josephence
+- Author: Harry Joseph
 - Created: November 8, 2025
 - Java Version: 21 LTS
 - Build Tool: Maven
 
 ## Overview
 This project demonstrates Java Collections Framework usage through a course registration system. It covers the main collection types: Lists, Sets, Maps, and Queues with practical examples.
+
+## Download
+
+**Download the complete project:**
+
+[![Download DataLab8.zip](https://img.shields.io/badge/Download-DataLab8.zip-blue?style=for-the-badge&logo=download)](https://github.com/hjoseph777/course-registration-system/releases/download/v1/DataLab8.zip)
+
 
 ## Setup
 
@@ -30,6 +37,25 @@ course-registration-system/
 ├── pom.xml                        # Maven configuration
 └── README.md                      # This file
 ```
+
+## Know Your Important Files
+
+Click on any file to view the source code directly on GitHub:
+
+### **Main Application Files**
+- **[App.java](https://github.com/hjoseph777/course-registration-system/blob/main/src/main/java/com/humber/registration/App.java)** - Main application with interactive input for Collections Framework demonstrations
+- **[DemoApp.java](https://github.com/hjoseph777/course-registration-system/blob/main/src/main/java/com/humber/registration/DemoApp.java)** - Demo version with predefined data (no user input required)
+- **[StudentWaitRequest.java](https://github.com/hjoseph777/course-registration-system/blob/main/src/main/java/com/humber/registration/StudentWaitRequest.java)** - Model class for student waitlist requests with priority handling
+
+### **Test Files**
+- **[AppTest.java](https://github.com/hjoseph777/course-registration-system/blob/main/src/test/java/com/humber/registration/AppTest.java)** - Unit tests for the application components
+
+### **Configuration & Build**
+- **[pom.xml](https://github.com/hjoseph777/course-registration-system/blob/main/pom.xml)** - Maven project configuration with dependencies and build settings
+- **[sample_input.txt](https://github.com/hjoseph777/course-registration-system/blob/main/sample_input.txt)** - Sample input data for testing the main application
+
+### **Documentation**
+- **[README.md](https://github.com/hjoseph777/course-registration-system/blob/main/README.md)** - This documentation file
 
 
 
