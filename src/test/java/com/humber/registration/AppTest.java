@@ -3,16 +3,11 @@ package com.humber.registration;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Basic test for Collections demo app
- */
 public class AppTest {
     
     @Test
-    public void testAppRuns() {
-        // just make sure the main method doesn't crash
+    public void testAppInstantiation() {
         assertDoesNotThrow(() -> {
-            // App.main would require user input, so we just test instantiation
             App app = new App();
             assertNotNull(app);
         });
@@ -25,5 +20,13 @@ public class AppTest {
         assertEquals("Java Programming", request.getCourseName());
         assertEquals(1, request.getPriority());
         assertNotNull(request.getTimestamp());
+    }
+    
+    @Test
+    public void testStudentWaitRequestComparison() {
+        StudentWaitRequest urgent = new StudentWaitRequest("John", "Web Dev", 1);
+        StudentWaitRequest normal = new StudentWaitRequest("Jane", "Database", 5);
+        
+        assertTrue(urgent.getPriority() < normal.getPriority());
     }
 }

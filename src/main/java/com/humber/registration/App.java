@@ -3,69 +3,56 @@ package com.humber.registration;
 import java.util.*;
 
 /**
- * Humber Registration System - Java Collections Framework Demo
- * Shows basic Collections usage: Lists, Sets, Maps, Queues
+ * Course Registration System
+ * Demonstrates various Java Collections Framework features
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("=== Humber Registration System - Collections Demo ===\n");
+        System.out.println("=== Course Registration System ===\n");
         
-        // Run all four parts of the Collections demo
-        runPartA();  // Student ID handling with wrapper classes
-        runPartB();  // Duplicate registration with Sets
-        runPartC();  // Course enrollment with Maps
-        runPartD();  // Waitlist processing with Queues
+        runStudentIdDemo();
+        runRegistrationDemo();
+        runEnrollmentDemo();
+        runWaitlistDemo();
         
         System.out.println("\n=== Demo Complete ===");
     }
     
-    // Part A: Student ID Handling (Wrapper Classes & Autoboxing)
-    private static void runPartA() {
-        System.out.println("--- Part A: Student ID Handling (Wrapper Classes) ---");
+    private static void runStudentIdDemo() {
+        System.out.println("--- Student ID Management ---");
         
         List<Integer> studentIds = new ArrayList<>();
         
         try (Scanner scanner = new Scanner(System.in)) {
-            // Prompt for 10 student IDs
             System.out.println("Enter 10 student IDs:");
             for (int i = 0; i < 10; i++) {
                 System.out.print("ID " + (i + 1) + ": ");
-                studentIds.add(scanner.nextInt()); // autoboxing: int -> Integer
+                studentIds.add(scanner.nextInt());
             }
         }
         
-        // compute sum (unboxing: Integer -> int)
-        int sum = 0;
-        for (Integer id : studentIds) {
-            sum += id; // unboxing happens here
-        }
+        // Calculate total for batch processing
+        int sum = studentIds.stream().mapToInt(Integer::intValue).sum();
         System.out.println("Sum of all IDs: " + sum);
+        System.out.println("Average ID: " + (sum / studentIds.size()));
         
-        // Test autoboxing comparisons
-        Integer a = 128, b = 128;
-        Integer c = 42, d = 42;
-        
-        System.out.println("\nAutoboxing comparison tests:");
-        System.out.println("128 == 128: " + (a == b));
-        System.out.println("128 .equals 128: " + a.equals(b));
-        System.out.println("42 == 42: " + (c == d));
-        System.out.println("42 .equals 42: " + c.equals(d));
+        // Check for duplicate IDs
+        long uniqueCount = studentIds.stream().distinct().count();
+        if (uniqueCount != studentIds.size()) {
+            System.out.println("Warning: Duplicate IDs detected!");
+        }
         System.out.println();
     }
     
-    // Part B: Avoiding Duplicate Registration (Sets)
-    private static void runPartB() {
-        System.out.println("--- Part B: Avoiding Duplicate Registration (Sets) ---");
+    private static void runRegistrationDemo() {
+        System.out.println("--- Student Registration ---");
         
-        // list with duplicates
         List<String> registrations = Arrays.asList("Alex", "Sarah", "Mike", "Alex", "Emma", "Sarah", "John");
         System.out.println("Original list: " + registrations);
         
-        // remove duplicates with HashSet
         HashSet<String> uniqueStudents = new HashSet<>(registrations);
         System.out.println("HashSet (no duplicates): " + uniqueStudents);
         
-        // sorted roster with TreeSet
         TreeSet<String> sortedRoster = new TreeSet<>(registrations);
         System.out.println("TreeSet (sorted): " + sortedRoster);
         
@@ -75,11 +62,9 @@ public class App {
         System.out.println();
     }
     
-    // Part C: Course Enrollment Records (Map)
-    private static void runPartC() {
-        System.out.println("--- Part C: Course Enrollment Records (Map) ---");
+    private static void runEnrollmentDemo() {
+        System.out.println("--- Course Enrollment ---");
         
-        // sample course enrollments
         HashMap<String, Integer> enrollmentCounts = new HashMap<>();
         enrollmentCounts.put("Java Programming", 25);
         enrollmentCounts.put("Web Dev", 30);
@@ -91,7 +76,6 @@ public class App {
         enrollmentCounts.forEach((course, count) -> 
             System.out.println("  " + course + ": " + count + " students"));
         
-        // top 3 courses
         System.out.println("\nTop 3 courses by enrollment:");
         enrollmentCounts.entrySet().stream()
             .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
@@ -106,19 +90,15 @@ public class App {
         System.out.println();
     }
     
-    // Part D: Waitlist Queue Processing
-    private static void runPartD() {
-        System.out.println("--- Part D: Waitlist Queue Processing ---");
+    private static void runWaitlistDemo() {
+        System.out.println("--- Waitlist Processing ---");
         
-        // Priority queue for urgent requests
         PriorityQueue<StudentWaitRequest> urgentWaitlist = new PriorityQueue<>(
             Comparator.comparing(StudentWaitRequest::getPriority)
                       .thenComparing(StudentWaitRequest::getTimestamp));
         
-        // Regular queue for normal requests
         ArrayDeque<StudentWaitRequest> normalWaitlist = new ArrayDeque<>();
         
-        // add sample requests
         urgentWaitlist.offer(new StudentWaitRequest("Alex", "Java Programming", 1));
         normalWaitlist.offer(new StudentWaitRequest("Sarah", "Web Dev", 5));
         urgentWaitlist.offer(new StudentWaitRequest("Mike", "Database Systems", 2));
@@ -131,15 +111,12 @@ public class App {
         System.out.println("Processing waitlist requests:");
         int processedCount = 1;
         
-        // process: one urgent, then one normal, repeat
         while (!urgentWaitlist.isEmpty() || !normalWaitlist.isEmpty()) {
-            // handle urgent first
             if (!urgentWaitlist.isEmpty()) {
                 StudentWaitRequest request = urgentWaitlist.poll();
                 System.out.println(processedCount++ + ". URGENT: " + request);
             }
             
-            // then handle normal
             if (!normalWaitlist.isEmpty()) {
                 StudentWaitRequest request = normalWaitlist.poll();
                 System.out.println(processedCount++ + ". NORMAL: " + request);

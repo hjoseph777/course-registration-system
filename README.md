@@ -1,29 +1,15 @@
-## Course Registration System – Java Collections Framework Demo
+# Course Registration System
 
-## Project Humber College Computer Science
+## Project Information
 - Author: Harry Josephence
 - Created: November 8, 2025
-- Platform: Java 11 + Maven
-- Package Manager: Maven
-- Build Tool: Apache Maven 
-- Framework: Java Collections Framework Demonstration
+- Java Version: 21 LTS
+- Build Tool: Maven
 
 ## Overview
-The Humber Registration System demonstrates the four major components of the Java Collections Framework through simple, focused examples. This educational project covers wrapper classes, Sets, Maps, and Queues using console-based demonstrations that show fundamental Collections operations.
+This project demonstrates Java Collections Framework usage through a course registration system. It covers the main collection types: Lists, Sets, Maps, and Queues with practical examples.
 
-## 📦 Download
-
-**Download the complete project:**
-
-[![Download Datalab8.zip](https://img.shields.io/badge/Download-Datalab8.zip-blue?style=for-the-badge&logo=download)](https://github.com/hjoseph777/releases/download/v1/Datalab8.zip)
-
-Or get it directly from the releases page:
-- **Release**: [v1 - Datalab8.zip](https://github.com/hjoseph777/releases/tag/v1)
-- **Direct Download**: [Datalab8.zip](https://github.com/hjoseph777/releases/download/v1/Datalab8.zip)
-
-## 📥 Quick Setup
-
-**Get started with the project:**
+## Setup
 
 ```bash
 git clone [repository-url]
@@ -32,65 +18,28 @@ mvn clean compile
 mvn exec:java -Dexec.mainClass="com.humber.registration.App"
 ```
 
-urgent and normal queues
-
-## Project Explorer
-An interactive, collapsible view of the simplified codebase focused on Collections Framework demonstrations.
-
-<details open>
-   <summary><strong>src/main/java/com/humber/registration/ – Core Collections Demos</strong></summary>
-
-   - 📁 <strong>com.humber.registration</strong>
-      - 🏠 [`App.java`](src/main/java/com/humber/registration/App.java) – **Main application with all four Collections demos**
-      - � [`StudentWaitRequest.java`](src/main/java/com/humber/registration/StudentWaitRequest.java) – **Support class for Part D Queue demonstrations**
-</details>
-
-<details>
-   <summary><strong>src/test/java/ – Unit Tests</strong></summary>
-
-   - 📁 <strong>com.humber.registration</strong>
-      - 🧪 [`AppTest.java`](src/test/java/com/humber/registration/AppTest.java) – Basic application and StudentWaitRequest tests
-</details>
-
-<details>
-   <summary><strong>Configuration & Build</strong></summary>
-
-   - ⚙️ [`pom.xml`](pom.xml) – Maven project configuration and dependencies
-   - 🔧 [`.vscode/settings.json`](.vscode/settings.json) – VS Code workspace configuration
-   - � [`README.md`](README.md) – Project documentation (this file)
-   - 📁 [`target/`](target/) – Maven build output and compiled classes
-   - 📊 [`target/surefire-reports/`](target/surefire-reports/) – JUnit test reports and results
-</details>
-
-## File Structure
+## Project Structure
 
 ```text
 course-registration-system/
-├── 📁 src/main/java/com/humber/registration/  # Core Java Collections demos
-│   ├── 🏠 App.java                           # Main application with all Collections demonstrations
-│   └── � StudentWaitRequest.java            # Support class for Queue demonstrations
-│
-├── 📁 src/test/java/com/humber/registration/  # Unit tests
-│   └── 🧪 AppTest.java                       # Basic application tests
-│
-├── 📁 target/                                # Maven build output
-│   ├── 📁 classes/                           # Compiled .class files
-│   └── 📁 test-classes/                      # Compiled test files
-│
-├── 📁 .vscode/                               # VS Code workspace settings
-├── ⚙️ pom.xml                                # Maven project configuration
-└── 📋 README.md                             # Documentation (this file)
+├── src/main/java/com/humber/registration/
+│   ├── App.java                    # Main application
+│   └── StudentWaitRequest.java     # Wait request model
+├── src/test/java/com/humber/registration/
+│   └── AppTest.java               # Tests
+├── pom.xml                        # Maven configuration
+└── README.md                      # This file
 ```
 
 
 
-## Build & Run
+## Usage
 
 ```bash
 # Compile the project
 mvn clean compile
 
-# Run the main application (requires user input)
+# Run the main application
 mvn exec:java -Dexec.mainClass="com.humber.registration.App"
 
 # Run tests
@@ -100,35 +49,39 @@ mvn test
 mvn package
 ```
 
-## Demo: Collections Framework in Action
+## Features
 
-The main application demonstrates all four Java Collections Framework components. Run the application to see each part in action:
+The application demonstrates:
 
-### Interactive Demonstration
+1. **Student ID Management** - Shows Integer wrapper class usage and autoboxing behavior
+2. **Duplicate Prevention** - Uses HashSet and TreeSet to handle duplicate student registrations
+3. **Course Enrollment** - HashMap for tracking enrollment counts with sorting capabilities
+4. **Waitlist Processing** - PriorityQueue implementation for handling urgent vs normal requests
 
-When you run `mvn exec:java -Dexec.mainClass="com.humber.registration.App"`, you'll see:
+## Sample Run
 
-1. **Part A: Student ID Handling** - Prompts you to enter 10 student IDs, demonstrates autoboxing/unboxing, and shows Integer comparison behavior
-2. **Part B: Duplicate Registration Prevention** - Shows how HashSet and TreeSet handle duplicate student names automatically
-3. **Part C: Course Enrollment Tracking** - Displays HashMap operations for course enrollment counting and TreeMap for alphabetical sorting
-4. **Part D: Waitlist Processing** - Demonstrates PriorityQueue and ArrayDeque working together to process urgent and normal waitlist requests
-
-### Sample Output
-
-Using the provided sample data file:
+When you run the application, it will prompt for student IDs and then demonstrate each collection type with sample data. You can also run with predefined input:
 
 ```bash
 mvn exec:java -Dexec.mainClass="com.humber.registration.App" < sample_input.txt
 ```
 
-Console output:
+## Demo Version
+
+For a quick demo without user input, run the demo version:
+
+```bash
+mvn exec:java -Dexec.mainClass="com.humber.registration.DemoApp"
+```
+
+### Console Output
 
 ```
-=== Humber Registration System - Collections Demo ===
+=== Course Registration System ===
 
---- Part A: Student ID Handling (Wrapper Classes) ---
-Enter 10 student IDs:
-ID 1: ID 2: ID 3: ID 4: ID 5: ID 6: ID 7: ID 8: ID 9: ID 10: Sum of all IDs: 10055
+--- Student ID Management ---
+Sample student IDs: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
+Sum of all IDs: 10055
 
 Autoboxing comparison tests:
 128 == 128: false
@@ -136,7 +89,7 @@ Autoboxing comparison tests:
 42 == 42: true
 42 .equals 42: true
 
---- Part B: Avoiding Duplicate Registration (Sets) ---
+--- Student Registration ---
 Original list: [Alex, Sarah, Mike, Alex, Emma, Sarah, John]
 HashSet (no duplicates): [Alex, Mike, Sarah, John, Emma]
 TreeSet (sorted): [Alex, Emma, John, Mike, Sarah]
@@ -144,7 +97,7 @@ Is Alex enrolled? true
 First student (alphabetically): Alex
 Last student (alphabetically): Sarah
 
---- Part C: Course Enrollment Records (Map) ---
+--- Course Enrollment ---
 Enrollment counts:
   Database Systems: 18 students
   Web Dev: 30 students
@@ -164,7 +117,7 @@ Courses (alphabetical):
   Mobile Apps: 22 students
   Web Dev: 30 students
 
---- Part D: Waitlist Queue Processing ---
+--- Waitlist Processing ---
 Processing waitlist requests:
 1. URGENT: Alex wants Java Programming (priority: 1)
 2. NORMAL: Sarah wants Web Dev (priority: 5)
@@ -177,17 +130,3 @@ Processing waitlist requests:
 
 === Demo Complete ===
 ```
-
-### Demo Version (no user input required)
-
-For demonstration purposes without user input:
-
-```bash
-mvn exec:java -Dexec.mainClass="com.humber.registration.DemoApp"
-```
-
-This version displays the same functionality with predefined sample data, perfect for viewing the Collections Framework behavior without entering 10 student IDs manually.
-
----
-
-*This simplified project demonstrates fundamental Java Collections Framework concepts through focused, educational examples.*
