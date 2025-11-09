@@ -38,6 +38,63 @@ course-registration-system/
 └── README.md                      # This file
 ```
 
+### Console Output
+
+```
+=== Course Registration System ===
+
+--- Student ID Management ---
+Sample student IDs: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
+Sum of all IDs: 10055
+
+Autoboxing comparison tests:
+128 == 128: false
+128 .equals 128: true
+42 == 42: true
+42 .equals 42: true
+
+--- Student Registration ---
+Original list: [Alex, Sarah, Mike, Alex, Emma, Sarah, John]
+HashSet (no duplicates): [Alex, Mike, Sarah, John, Emma]
+TreeSet (sorted): [Alex, Emma, John, Mike, Sarah]
+Is Alex enrolled? true
+First student (alphabetically): Alex
+Last student (alphabetically): Sarah
+
+--- Course Enrollment ---
+Enrollment counts:
+  Database Systems: 18 students
+  Web Dev: 30 students
+  Java Programming: 25 students
+  AI Fundamentals: 35 students
+  Mobile Apps: 22 students
+
+Top 3 courses by enrollment:
+  AI Fundamentals: 35
+  Web Dev: 30
+  Java Programming: 25
+
+Courses (alphabetical):
+  AI Fundamentals: 35 students
+  Database Systems: 18 students
+  Java Programming: 25 students
+  Mobile Apps: 22 students
+  Web Dev: 30 students
+
+--- Waitlist Processing ---
+Processing waitlist requests:
+1. URGENT: Alex wants Java Programming (priority: 1)
+2. NORMAL: Sarah wants Web Dev (priority: 5)
+3. URGENT: Lisa wants Java Programming (priority: 1)
+4. NORMAL: Emma wants Mobile Apps (priority: 5)
+5. URGENT: Mike wants Database Systems (priority: 2)
+6. NORMAL: John wants AI Fundamentals (priority: 5)
+7. NORMAL: Tom wants Web Dev (priority: 5)
+8. NORMAL: Anna wants Database Systems (priority: 5)
+
+=== Demo Complete ===
+```
+
 ## Know Your Important Files
 
 Click on any file to view the source code directly on GitHub:
@@ -98,61 +155,4 @@ For a quick demo without user input, run the demo version:
 
 ```bash
 mvn exec:java -Dexec.mainClass="com.humber.registration.DemoApp"
-```
-
-### Console Output
-
-```
-=== Course Registration System ===
-
---- Student ID Management ---
-Sample student IDs: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
-Sum of all IDs: 10055
-
-Autoboxing comparison tests:
-128 == 128: false
-128 .equals 128: true
-42 == 42: true
-42 .equals 42: true
-
---- Student Registration ---
-Original list: [Alex, Sarah, Mike, Alex, Emma, Sarah, John]
-HashSet (no duplicates): [Alex, Mike, Sarah, John, Emma]
-TreeSet (sorted): [Alex, Emma, John, Mike, Sarah]
-Is Alex enrolled? true
-First student (alphabetically): Alex
-Last student (alphabetically): Sarah
-
---- Course Enrollment ---
-Enrollment counts:
-  Database Systems: 18 students
-  Web Dev: 30 students
-  Java Programming: 25 students
-  AI Fundamentals: 35 students
-  Mobile Apps: 22 students
-
-Top 3 courses by enrollment:
-  AI Fundamentals: 35
-  Web Dev: 30
-  Java Programming: 25
-
-Courses (alphabetical):
-  AI Fundamentals: 35 students
-  Database Systems: 18 students
-  Java Programming: 25 students
-  Mobile Apps: 22 students
-  Web Dev: 30 students
-
---- Waitlist Processing ---
-Processing waitlist requests:
-1. URGENT: Alex wants Java Programming (priority: 1)
-2. NORMAL: Sarah wants Web Dev (priority: 5)
-3. URGENT: Lisa wants Java Programming (priority: 1)
-4. NORMAL: Emma wants Mobile Apps (priority: 5)
-5. URGENT: Mike wants Database Systems (priority: 2)
-6. NORMAL: John wants AI Fundamentals (priority: 5)
-7. NORMAL: Tom wants Web Dev (priority: 5)
-8. NORMAL: Anna wants Database Systems (priority: 5)
-
-=== Demo Complete ===
 ```
