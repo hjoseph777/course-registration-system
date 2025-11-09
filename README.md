@@ -43,16 +43,14 @@ course-registration-system/
 ```
 === Course Registration System ===
 
+Part A: Student ID Management with statistics and duplicate validation
 --- Student ID Management ---
 Sample student IDs: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010]
 Sum of all IDs: 10055
+Average ID: 1005
+All IDs are unique.
 
-Autoboxing comparison tests:
-128 == 128: false
-128 .equals 128: true
-42 == 42: true
-42 .equals 42: true
-
+Part B: Sets with HashSet/TreeSet for registration management
 --- Student Registration ---
 Original list: [Alex, Sarah, Mike, Alex, Emma, Sarah, John]
 HashSet (no duplicates): [Alex, Mike, Sarah, John, Emma]
@@ -61,6 +59,7 @@ Is Alex enrolled? true
 First student (alphabetically): Alex
 Last student (alphabetically): Sarah
 
+Part C: HashMap/TreeMap for course enrollment tracking
 --- Course Enrollment ---
 Enrollment counts:
   Database Systems: 18 students
@@ -81,6 +80,7 @@ Courses (alphabetical):
   Mobile Apps: 22 students
   Web Dev: 30 students
 
+Part D: PriorityQueue and ArrayDeque with alternating processing rule
 --- Waitlist Processing ---
 Processing waitlist requests:
 1. URGENT: Alex wants Java Programming (priority: 1)
@@ -136,10 +136,10 @@ mvn package
 
 The application demonstrates:
 
-1. **Student ID Management** - Shows Integer wrapper class usage and autoboxing behavior
-2. **Duplicate Prevention** - Uses HashSet and TreeSet to handle duplicate student registrations
-3. **Course Enrollment** - HashMap for tracking enrollment counts with sorting capabilities
-4. **Waitlist Processing** - PriorityQueue implementation for handling urgent vs normal requests
+1. **Student ID Management** - Calculates statistics (sum, average) and validates for duplicate student IDs
+2. **Duplicate Prevention** - Uses HashSet and TreeSet to handle duplicate student registrations with sorting
+3. **Course Enrollment** - HashMap for tracking enrollment counts with top courses analysis and alphabetical sorting
+4. **Waitlist Processing** - PriorityQueue for urgent requests and ArrayDeque for normal requests with alternating processing rule
 
 ## Sample Run
 

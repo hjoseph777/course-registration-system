@@ -105,12 +105,15 @@ public class DemoApp {
         System.out.println("Processing waitlist requests:");
         int processedCount = 1;
         
+        // Processing rule: one urgent, then one normal, repeat
         while (!urgentWaitlist.isEmpty() || !normalWaitlist.isEmpty()) {
+            // Process one urgent request (if available)
             if (!urgentWaitlist.isEmpty()) {
                 StudentWaitRequest request = urgentWaitlist.poll();
                 System.out.println(processedCount++ + ". URGENT: " + request);
             }
             
+            // Then process one normal request (if available)
             if (!normalWaitlist.isEmpty()) {
                 StudentWaitRequest request = normalWaitlist.poll();
                 System.out.println(processedCount++ + ". NORMAL: " + request);
